@@ -5,19 +5,7 @@ import rasterio
 import fiona
 
 
-"""
-Professional Backend Engineering Philosophy
 
-Use of chatgpt or claude.ai is only once the code is ready to submit for review, polishing the code, and landing the code.
-I take pride in learning concepts and coding in my journey for carbon engineering
-Write authentic code.
-
-
-I will only use ChatGPT, Claude, or cursor if I struggle with something such as "How do I ask for user input in Python?"
-It's only for learning and not for writing code.
-When I am stuck on a problem, use AI. However, I understand that I am responsible for understanding my code.
-
-"""
 
 """
 Challenge: Create a program that asks the user to enter a file path to an arbitrary raster (GEOTIFF)
