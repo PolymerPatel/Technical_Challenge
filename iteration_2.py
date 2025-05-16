@@ -1,31 +1,11 @@
 #!/usr/bin/env python3
-"""
-Enhanced Raster Polygon Average Calculator
 
-This version includes additional functionality:
-- 
-- Support for multiple polygons in the vector file
-- Enhanced error handling and validation
-- Performance optimizations for large datasets
-
-"""
-
-import os
-import sys
-import time
-from pathlib import Path
-import geopandas as gpd
-import rasterio
-from rasterio.mask import mask
-from rasterio.plot import show
-from shapely.geometry import mapping
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.colors import Normalize
-
-"""Notes about Section 1
-
-    """
+import geopandas as gpd  # For vector data handling
+import rasterio  # For raster data handling
+from rasterio.mask import mask  # For masking raster data with vector geometries
+import numpy as np  # For numerical operations
+import os  # For file path operations
+from shapely.geometry import mapping  # For geometry operations
 
 def get_file_path(prompt, file_types=None):
     while True:
@@ -46,11 +26,6 @@ def get_file_path(prompt, file_types=None):
             continue
             
         return file_path
-
-
-"""Notes about Section 2
-
-    """
 
 def explore_raster_metadata(raster_path):
     try:
@@ -84,11 +59,6 @@ def explore_raster_metadata(raster_path):
         print(f"Error reading raster metadata: {e}")
         return None
 
-
-"""Notes about Section 3
-
-    """
-
 def explore_vector_metadata(vector_path):
     try:
         gdf = gpd.read_file(vector_path)
@@ -113,10 +83,6 @@ def explore_vector_metadata(vector_path):
     except Exception as e:
         print(f"Error reading vector metadata: {e}")
         return None
-
-"""Notes about Section 4
-
-    """
 
 def compute_average_from_vector(raster_path, vector_path, band_index=1, visualize=False):
     start_time = time.time()
@@ -172,10 +138,6 @@ def compute_average_from_vector(raster_path, vector_path, band_index=1, visualiz
     except Exception as e:
         print(f"Error computing average: {e}")
         return None, 0, None
-
-"""Notes about Section 5
-
-    """
 
 def main():
     """Main function to run the script"""
