@@ -1,0 +1,41 @@
+comments.py
+
+"""
+Libraries required:
+    - geopandas
+    - rasterio
+    - shapely
+    - numpy
+    - matplotlib
+    - fiona (dependency of geopandas)
+
+    # Lines 20 to 23 are core system libraries for file system operations
+    # libraries gpd and rasterio handle geospatial data (vector and rasters)
+    # Specific mapping method from shapely.geometry provides geometric operations and conversions
+
+    Section 2: getting data from file paths
+
+    The missing elements 
+
+    #Does None need to be changed to geoJSON?
+    Line 52: Use the function Path from pathlib to make sure it works across platforms
+    Line 105: # understanding of extracting metadata was a knowledge gap
+              # vector and raster data differences require two functions
+    Line 119 to 122: # understand geometry types dictionary and why it is required
+                     # attributes column to inform users about available data attributes
+
+    Line 133: # Open the raster
+    Line 137: # Validate band index
+    Line 142: # Read the vector file
+    Line 144: # Conditional statement logic checking if the vector has polygons
+    Line 150: # Understand the need to reproject the vector to match raster CRS
+    Line 156: # Understand how GeoDataFrame function can check for empty intersection within bounds and crs
+    Line 166: # Understand geoms variable to get geometries for masking
+              # Mask the raster with the polygon geometries
+    Line 173: # Extract valid pixels (not nodata) from the specified band 
+              # Convert to 0-based indexing
+    Line 177: # Handle potential nodata values
+    Line 181: # If no nodata value defined, use all pixels
+    Line 205: # Get raster file path
+
+    """"
