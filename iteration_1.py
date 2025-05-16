@@ -3,15 +3,6 @@ from rasterio.mask import mask
 from shapely.geometry import mapping
 import numpy as np
 
-"""
-Use of chatgpt or claude.ai is only once the code is ready to submit for review, polishing the code, and landing the code.
-Only use ChatGPT, Claude, or cursor if I struggle with something such as "How do I ask for user input in Python?"
-
-It's only for learning and not for writing code.
-When I am stuck on a problem, use AI. However, I understand that I am responsible for understanding my code.
-
-"""
-
 raster_path = input("Enter a GeoTIFF file path, shp, or JSON: ")
 
 #pass in two parameters in function
