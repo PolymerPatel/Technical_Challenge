@@ -1,26 +1,13 @@
 #!/usr/bin/env python3
 
-# Section 1: Import required libraries
-# Core geospatial processing libraries
 import geopandas as gpd  # For vector data handling
 import rasterio  # For raster data handling
 from rasterio.mask import mask  # For masking raster data with vector geometries
 import numpy as np  # For numerical operations
 import os  # For file path operations
 from shapely.geometry import mapping  # For geometry operations
-import matplotlib.pyplot as plt  # For visualization
 
 def validate_file_path(prompt: str, file_types: list) -> str:
-    """
-    Ask user for a file path and validate it exists.
-    
-    Args:
-        prompt (str): Message to display to user
-        file_types (list): List of acceptable file extensions
-        
-    Returns:
-        str: Validated file path
-    """
     while True:
         file_path = input(prompt)
         
@@ -187,9 +174,6 @@ def calculate_zonal_statistics(raster_path: str, vector_path: str, band_index: i
         return 0.0
 
 def main():
-    """
-    Main function to orchestrate the geospatial analysis
-    """
     # Get file paths
     print("\n=== Select Input Files ===")
     vector_path = validate_file_path(
