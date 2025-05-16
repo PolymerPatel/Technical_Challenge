@@ -138,9 +138,8 @@ def compute_average_from_vector(raster_path, vector_path, band_index=1, visualiz
     except Exception as e:
         print(f"Error computing average: {e}")
         return None, 0, None
-
+#debugging
 def main():
-    """Main function to run the script"""
 
     raster_extensions = ['.tif', '.tiff', '.geotiff']
     raster_path = get_file_path(
@@ -167,7 +166,7 @@ def main():
     )
     
     if average is not None:
-        print(f"\nResults:")
+        print(f"Results:")
         print(f"Average value of {pixel_count} cells within polygon: {average:.6f}")
         
         # Calculate additional statistics
@@ -177,21 +176,10 @@ def main():
                 valid_data = band_data[band_data != raster_metadata["nodata"]]
             else:
                 valid_data = band_data.flatten()
-                
-            if len(valid_data) > 0:
-                min_val = np.min(valid_data)
-                max_val = np.max(valid_data)
-                median_val = np.median(valid_data)
-                std_dev = np.std(valid_data)
-                
-                print(f"Minimum value: {min_val:.6f}")
-                print(f"Maximum value: {max_val:.6f}")
-                print(f"Median value: {median_val:.6f}")
-                print(f"Standard deviation: {std_dev:.6f}")
     else:
-        print("\nCould not calculate average. No valid pixels found within polygon.")
+        print("Could not calculate average. No valid pixels found within polygon.")
     
-    print("\nDone!")
+    print("Done!")
 
 
 if __name__ == "__main__":
