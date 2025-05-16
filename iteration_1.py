@@ -3,9 +3,14 @@ from rasterio.mask import mask
 from shapely.geometry import mapping
 import numpy as np
 
-###Create a program that asks the user to enter a file path to an arbitrary raster (GEOTIFF)
-###And create a program that ask the user to enter a path to a vector polygon GEOJSON file
-### It will return the total sum and divide it by the length of the list
+"""
+Use of chatgpt or claude.ai is only once the code is ready to submit for review, polishing the code, and landing the code.
+Only use ChatGPT, Claude, or cursor if I struggle with something such as "How do I ask for user input in Python?"
+
+It's only for learning and not for writing code.
+When I am stuck on a problem, use AI. However, I understand that I am responsible for understanding my code.
+
+"""
 
 raster_path = input("Enter a GeoTIFF file path, shp, or JSON: ")
 
